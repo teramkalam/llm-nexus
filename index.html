@@ -1,0 +1,43 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LLM Nexus</title>
+  <meta name="description" content="A stylish website that accepts a string input from users." />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <h1>Enter your prompt</h1>
+    <input type="text" id="userInput" placeholder="Type something...">
+
+  <h3 style="margin-top: 20px;">Select LLM(s) to process:</h3>
+  <div class="llm-options">
+    <label><input type="checkbox" value="GPT-4"> GPT-4</label>
+    <label><input type="checkbox" value="GPT-3.5"> GPT-3.5</label>
+    <label><input type="checkbox" value="BERT"> BERT</label>
+    <label><input type="checkbox" value="LLaMA"> LLaMA</label>
+    <!-- Add more models as needed -->
+  </div>
+    <br>
+    <button onclick="showString()">Submit</button>
+    <div class="result" id="result"></div>
+  </div>
+
+<script>
+  function showString() {
+    const input = document.getElementById('userInput').value;
+    const checkboxes = document.querySelectorAll('.llm-options input[type="checkbox"]:checked');
+    const selectedOptions = Array.from(checkboxes).map(cb => cb.value);
+
+    const resultDiv = document.getElementById('result');
+
+    // Show processing message
+    resultDiv.textContent = 'Processing...';
+  }
+</script>
+</body>
+</html>
