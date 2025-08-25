@@ -1,0 +1,80 @@
+/* style.css */
+:root {
+  --bg: linear-gradient(135deg, #1e1e2f, #0d0d1a);
+  --text: #f5f5f5;
+  --accent: #7c5cff;
+  --input-bg: #2a2a3d;
+  --border: #444;
+  --radius: 12px;
+  --shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+/* body { background: var(--bg); color: var(--text); display: flex; justify-content: center; align-items: center; } */
+
+body { 
+  color: var(--text); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  /* Use your local image */ 
+  background: url('background.jpg') no-repeat center center; 
+  background-size: cover; /* Make sure it covers the whole screen */ 
+}
+
+.container { 
+  background: rgba(0,0,0,0.7); 
+  padding: 40px; 
+  border-radius: var(--radius); 
+  box-shadow: var(--shadow); 
+  text-align: center; 
+  width: 90%; 
+  max-width: 500px; 
+}
+
+h1 { margin-bottom: 24px; font-size: 2rem; }
+input[type=text] { 
+  width: 100%; 
+  padding: 12px; 
+  margin-bottom: 16px; 
+  border-radius: var(--radius); 
+  border: 1px solid var(--border); 
+  background: var(--input-bg); 
+  color: var(--text); 
+  font-size: 1rem; 
+}
+
+button { 
+  padding: 12px 24px; 
+  border: none; 
+  border-radius: var(--radius); 
+  background: var(--accent); 
+  color: #fff; 
+  font-size: 1rem; 
+  cursor: pointer; 
+  transition: transform 0.1s ease; 
+}
+button:hover { transform: translateY(-2px); }
+
+.result { 
+  margin-top: 20px; 
+  font-size: 1.2rem; 
+  color: #fff; 
+  background: rgba(255,255,255,0.1); 
+  padding: 12px; 
+  border-radius: var(--radius); 
+}
+
+.container:first-of-type { 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 80vh; /* occupy 80% of the viewport height */
+  width: 90%;         /* you can increase if needed */
+  max-width: 700px;   /* wider container */
+  padding: 60px;      /* more padding inside */
+  background: rgba(0,0,0,0.75); /* slightly darker overlay */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
